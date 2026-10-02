@@ -61,7 +61,7 @@ export default function ContributorsPage() {
       {/* Dynamic CTA Footer */}
       <DynamicFooter
         text="Ready to Build the Future of Learning?"
-        description="Join our global community of open-source contributors and create impactful tools for classrooms and cohorts worldwide."
+        description="Join our global community of open-source contributors and create impactful tools for classrooms and cohorts across the world."
       />
     </div>
   );
