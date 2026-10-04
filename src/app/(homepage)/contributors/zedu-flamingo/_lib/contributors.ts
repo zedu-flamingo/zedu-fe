@@ -69,12 +69,9 @@ function parseCsv(text: string): string[][] {
 export async function getFlamingoContributors(): Promise<
   FlamingoContributor[]
 > {
-  let text: string;
-  try {
-    text = await readFile(CSV_PATH, "utf8");
-  } catch {
-    return [];
-  }
+  // Let a missing or unreadable CSV fail the build instead of rendering an
+  // empty board.
+  const text = await readFile(CSV_PATH, "utf8");
 
   // Excel's "CSV UTF-8" export prepends a byte-order mark.
   const [headerRow, ...dataRows] = parseCsv(text.replace(/^﻿/, ""));

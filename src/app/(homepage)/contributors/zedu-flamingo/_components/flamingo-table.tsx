@@ -20,7 +20,8 @@ export function FlamingoTable({
 }) {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const query = searchQuery.toLowerCase().trim();
+  // Usernames are shown with a leading "@", so ignore one in the search.
+  const query = searchQuery.toLowerCase().trim().replace(/^@/, "");
   const filtered = query
     ? contributors.filter(
         (c) =>
@@ -43,6 +44,7 @@ export function FlamingoTable({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search by name or username..."
+            aria-label="Search contributors by name or username"
             className="h-10 w-full rounded-xl border border-neutral-200 bg-white pl-9 pr-4 text-xs text-neutral-800 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#7141F8]/30"
           />
         </div>
