@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Zedu Flamingo Contributors Board | Zedu",
   description:
-    "Explore and submit contributions to the Zedu Flamingo developer community. Track contributors, Zedu usernames, and email addresses.",
+    "Explore and submit contributions to the Zedu Flamingo developer community. Track contributors, Zedu usernames, and linked GitHub repositories.",
   openGraph: {
     title: "Zedu Flamingo Contributors Board | Zedu",
     description:
-      "Explore and submit contributions to the Zedu Flamingo developer community. Track contributors, Zedu usernames, and email addresses.",
+      "Explore and submit contributions to the Zedu Flamingo developer community. Track contributors, Zedu usernames, and linked GitHub repositories.",
     url: "/contributors/zedu-flamingo",
     type: "website",
   },

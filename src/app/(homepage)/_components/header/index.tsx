@@ -58,6 +58,7 @@ const dropdownSections: DropdownSection[] = [
 
 const topLevelLinks: NavLink[] = [
   { label: "Resources", href: "/resources" },
+  { label: "Contributors", href: "/contributors" },
   { label: "Pricing", href: "/pricing" },
   { label: "About Us", href: "/about" },
   { label: "Download", href: "/download" },
