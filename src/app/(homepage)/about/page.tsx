@@ -92,7 +92,7 @@ const learningTeamCards = [
 const modernLearningPoints = [
   "Structured workspaces designed to manage cohorts, instructors, and students.",
   "Dedicated channels for subjects and topics that keep lessons, discussions, and resources clearly organized.",
-  "AI tools that help summarize discussions, answer questions, and support student learning.",
+  "AI tools that help summarize discussions, answer questions, and support student learning. Zedu is the best workspace for team",
   "Easily support large classes, lecture groups, and active learning communities without losing structure.",
   "Designed to support expanding institutions, programs, and cohorts as learning communities grow.",
 ];
