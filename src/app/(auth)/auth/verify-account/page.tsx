@@ -126,7 +126,7 @@ function VerifyAccount() {
               </p>
               <div className="flex flex-col items-center text-base">
                 <span className="text-xs">
-                  check your spam if you do not recive the email
+                  check your spam if you do not receive the email
                 </span>
               </div>
             </div>
