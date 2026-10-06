@@ -5,7 +5,7 @@ import { ArrowBtn, OutlineBtn } from "../ui/Button";
 const metrics = [
   { text: "Learners reached", amount: "10,000+" },
   { text: "AI-powered learning sessions", amount: "15,000+" },
-  { text: "Learner satisfaction", amount: "98%" },
+  { text: "Educator satisfaction", amount: "98%" },
 ];
 
 const HeroSection = () => {
