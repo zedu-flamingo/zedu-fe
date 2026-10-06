@@ -11,7 +11,7 @@ import { gtmScriptUrl } from "~/lib/env-urls";
 import { ThemeProvider } from "~/components/theme/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Zedu",
+  title: "Zedu Flamingo",
   icons: {
     icon: "/TelexIcon.svg",
   },
