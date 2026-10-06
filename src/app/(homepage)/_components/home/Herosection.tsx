@@ -3,9 +3,9 @@ import { Star } from "lucide-react";
 import { ArrowBtn, OutlineBtn } from "../ui/Button";
 
 const metrics = [
-  { text: "Learners supported", amount: "10,000+" },
-  { text: "Conversations powered by AI", amount: "15,000+" },
-  { text: "Educator satisfaction", amount: "98%" },
+  { text: "Learners reached", amount: "10,000+" },
+  { text: "AI-powered learning sessions", amount: "15,000+" },
+  { text: "Learner satisfaction", amount: "98%" },
 ];
 
 const HeroSection = () => {
