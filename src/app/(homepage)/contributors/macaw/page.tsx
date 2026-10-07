@@ -369,7 +369,7 @@ const contributors: Contributor[] = [
     workspaceEmail: "chidozie4god@gmail.com",
     gitHubEmail: "chidozie4god@gmail.com",
     role: "member",
-    hobbies: [],
+    hobbies: ["gaming", "football", "volleyball"],
   },
   {
     id: "38",
@@ -567,7 +567,7 @@ const contributors: Contributor[] = [
     workspaceEmail: "danielugbomaht@gmail.com",
     gitHubEmail: "Ugbomah-D",
     role: "member",
-    hobbies: [],
+    hobbies: ["Reading", "Chess", "Coding"],
   },
   {
     id: "60",
