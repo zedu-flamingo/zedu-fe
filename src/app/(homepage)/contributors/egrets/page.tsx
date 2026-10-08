@@ -39,8 +39,8 @@ const EgretContributorsPage = () => {
         Zedu <span className="text-primary-500">Egret</span> Contributors
       </h1>
       <p className="max-w-[95%] text-xs text-neutral-600 sm:max-w-[90%] sm:text-base md:max-w-[65%] lg:max-w-[45%] lg:text-lg">
-        Meet the Team Egret contributors who helped build Zedu during the HNG 15
-        internship.
+        Meet the Team Egret contributors helping build Zedu Chat during the HNG
+        15 internship.
       </p>
 
       {/* Stats - mirrors the homepage HeroSection metrics grid */}
