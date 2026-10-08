@@ -7,7 +7,7 @@ export const zeduOspreyContributors: Contributor[] = [
   { name: "Abdulrahman Abdulwasiu", username: "AbuDev" },
   { name: "Abiona Boluwatife", username: "DesignsbyB" },
   { name: "Adaeze Ifeanyi", username: "Adaeze" },
-  { name: "Adaeze Ikemefuna ", username: "Hamsa" },
+  { name: "Adaeze Ikemefuna", username: "Hamsa" },
   { name: "Adesua Benita", username: "Susu" },
   { name: "Adewale Abdul-Lateef Odukoya", username: "Adewale.py" },
   { name: "Ajayi Daniel", username: "Dahak" },
@@ -16,7 +16,7 @@ export const zeduOspreyContributors: Contributor[] = [
   { name: "Bahir Momodu", username: "BAGHIRA" },
   { name: "Ctrlf-codex", username: "CtrlF" },
   { name: "Daniel Iderima 😎", username: "daniel_iderima" },
-  { name: "Deborah Oyetunde", username: "Senorita" },
+  { name: "Delbiewonder", username: "Senorita" },
   { name: "Eddy Ukpong", username: "Eddy" },
   { name: "Ejiro Francess Ejoh", username: "ejiro frances" },
   { name: "Ekekwe Chinonso Charles", username: "xharlessnow" },
@@ -50,4 +50,5 @@ export const zeduOspreyContributors: Contributor[] = [
   { name: "Udoh, Ubokabasi Odudu", username: "Basi" },
   { name: "Yusuf Bashir Nayaya", username: "Ybee" },
   { name: "ZuliyatG", username: "Pom Pom" },
+  { name: "Gift Osanebi", username: "osanebigift" },
 ];

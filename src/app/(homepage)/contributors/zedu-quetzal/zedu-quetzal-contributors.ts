@@ -3,7 +3,7 @@ import type { Contributor } from "~/data/zedu-osprey-contributors";
 export const zeduQuetzalContributors: Contributor[] = [
   { name: "Omolara", username: "melancholia" },
   { name: "Tobiloba Similoluwa", username: "Tasiwewe" },
-  { name: "Taiwo Tolani", username: "conversely" },
+  { name: "Taiwo Omotola", username: "conversely" },
   { name: "Isaac Josiah", username: "isaac josiah" },
   { name: "Bigtiffs", username: "Bigtiffs" },
   { name: "Uchechukwu Samuel", username: "usamuelchukwu" },
