@@ -38,11 +38,25 @@ export const TEAM: Team = {
       field: "[Add your field of expertise]",
     },
     {
+      fullName: "Kanyinsola Ogunwale",
+      zeduUsername: "kanyinsolaogunwale",
+      githubUsername: "kanyinsolaogunwale",
+      role: "Member",
+      field: "UI/UX Design",
+    },
+    {
       fullName: "Abdulmuiz Abdulsalam Olalekan",
       zeduUsername: "abdulmuiz abdulsalam olalekan",
       githubUsername: "Iampeace001",
       role: "Member",
       field: "UI/UX Design",
+    },
+    {
+      fullName: "Victor Adeshile",
+      zeduUsername: "Victor Adeshile",
+      githubUsername: "davik4life",
+      role: "Member",
+      field: "Full-Stack Software Engineer",
     },
     {
       fullName: "Lawal Muhammed Olamide",
@@ -57,6 +71,27 @@ export const TEAM: Team = {
       githubUsername: "adesolabolu",
       role: "Member",
       field: "Data Analysis",
+    },
+    {
+      fullName: "Nwaohiri Emmanuel Uzodinma",
+      zeduUsername: "99PlusOne",
+      githubUsername: "Emmanuel-Xs",
+      role: "Member",
+      field: "Frontend Developer",
+    },
+    {
+      fullName: "Obiageli Ezeokoli",
+      zeduUsername: "Oby Ezeokoli",
+      githubUsername: "AfrikTechie",
+      role: "Member",
+      field: "Data Analysis",
+    },
+    {
+      fullName: "Pearl Koosi Akpaka",
+      zeduUsername: "PearlAkpaka",
+      githubUsername: "pearl-bit-tech",
+      role: "Member",
+      field: "Product Management",
     },
   ],
 };
