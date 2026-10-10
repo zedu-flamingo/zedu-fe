@@ -43,7 +43,7 @@ const RestrictedChannel = () => {
         <h2 className="text-base font-semibold text-[#101828] dark:text-zinc-100">
           Only admins can send message on this channel
         </h2>
-        <p className="mt-1 max-w-md text-sm text-[#667085] dark:text-zinc-400">
+        <p className="mt-1 max-w-md text-sm text-[#667085] dark:text-zinc-400 italic">
           Posting in {channelName ? `#${channelName}` : "this channel"} is
           restricted. You can still read messages
           {channelName ? ` in #${channelName}` : ""}.
