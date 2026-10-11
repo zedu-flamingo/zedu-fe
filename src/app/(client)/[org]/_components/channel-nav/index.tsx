@@ -1,7 +1,14 @@
 "use client";
 
 import { Avatar, AvatarImage } from "~/components/ui/avatar";
-import { EllipsisVertical, Hash, Lock, Pin } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronUp,
+  EllipsisVertical,
+  Hash,
+  Lock,
+  Pin,
+} from "lucide-react";
 import React, { useContext, useRef, useState } from "react";
 
 import { ACTIONS } from "~/store/Actions";
@@ -28,6 +35,7 @@ const ChannelHeader = () => {
   const [isMenuDropdownOpen, setIsMenuDropdownOpen] = useState(false);
   const [headerTab, setHeaderTab] = useState<ChannelHeaderTab>("messages");
   const [pinsOpen, setPinsOpen] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
   const menuDropdownRef = useRef<HTMLDivElement>(null);
   const { state, dispatch } = useContext(DataContext);
   const { channelDetails, user } = state;
@@ -124,7 +132,12 @@ const ChannelHeader = () => {
   ];
 
   return (
-    <nav className="border-b border-[#E6EAEF] px-3 pt-3 md:px-5 md:pt-4">
+    <nav
+      className={cn(
+        "border-b border-[#E6EAEF] px-3 transition-all duration-200",
+        isCollapsed ? "py-2 md:px-5" : "pt-3 md:px-5 md:pt-4"
+      )}
+    >
       <div className="flex items-start justify-between gap-3">
         <ChannelDetailsDialog>
           <Tooltips side="bottom" text="Get channel details">
@@ -230,35 +243,63 @@ const ChannelHeader = () => {
                   onClose={() => setIsMenuDropdownOpen(false)}
                 />
               </div>
+
+              <Tooltips
+                side="bottom"
+                text={
+                  isCollapsed
+                    ? "Expand channel header"
+                    : "Collapse header for more chat space"
+                }
+              >
+                <Button
+                  variant="outline"
+                  className="p-2 border-[#E6EAEF] h-9"
+                  onClick={() => setIsCollapsed((prev) => !prev)}
+                  aria-label={
+                    isCollapsed
+                      ? "Expand channel header"
+                      : "Collapse channel header"
+                  }
+                >
+                  {isCollapsed ? (
+                    <ChevronDown className="w-4 h-4 text-[#344054] dark:text-zinc-300" />
+                  ) : (
+                    <ChevronUp className="w-4 h-4 text-[#344054] dark:text-zinc-300" />
+                  )}
+                </Button>
+              </Tooltips>
             </div>
           )}
       </div>
 
-      <div className="mt-1 flex items-end gap-5 px-2">
-        {headerTabs.map((tab) => {
-          const active = headerTab === tab.id;
-          const Icon = tab.icon;
-          return (
-            <button
-              key={tab.id}
-              type="button"
-              onClick={() => {
-                setHeaderTab(tab.id);
-                setPinsOpen(tab.id === "pins");
-              }}
-              className={cn(
-                "-mb-px inline-flex items-center gap-1.5 border-b-2 pb-2 text-sm font-semibold",
-                active
-                  ? "border-[#5757CD] text-[#5757CD]"
-                  : "border-transparent text-[#667085] hover:text-[#344054]"
-              )}
-            >
-              {Icon ? <Icon className="size-3.5" /> : null}
-              {tab.label}
-            </button>
-          );
-        })}
-      </div>
+      {!isCollapsed && (
+        <div className="mt-1 flex items-end gap-5 px-2">
+          {headerTabs.map((tab) => {
+            const active = headerTab === tab.id;
+            const Icon = tab.icon;
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => {
+                  setHeaderTab(tab.id);
+                  setPinsOpen(tab.id === "pins");
+                }}
+                className={cn(
+                  "-mb-px inline-flex items-center gap-1.5 border-b-2 pb-2 text-sm font-semibold",
+                  active
+                    ? "border-[#5757CD] text-[#5757CD]"
+                    : "border-transparent text-[#667085] hover:text-[#344054]"
+                )}
+              >
+                {Icon ? <Icon className="size-3.5" /> : null}
+                {tab.label}
+              </button>
+            );
+          })}
+        </div>
+      )}
 
       <PinnedMessagesModal
         open={pinsOpen}
