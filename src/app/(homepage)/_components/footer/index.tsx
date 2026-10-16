@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useId, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Plus_Jakarta_Sans } from "next/font/google";
@@ -135,12 +135,17 @@ const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
   const { toast } = useToast();
+  const emailId = useId();
+  const errorId = `${emailId}-error`;
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setLoading(true);
+    setError("");
+    setSubscribed(false);
     const token = localStorage.getItem("token") || "";
 
     if (!validateEmail(email)) {
@@ -154,6 +159,7 @@ const Footer = () => {
     if (req?.data?.status_code === 201) {
       setEmail("");
       setError("");
+      setSubscribed(true);
       toast({
         description: "Email sent successfully!",
       });
@@ -187,14 +193,18 @@ const Footer = () => {
               onSubmit={handleSubmit}
               className="flex w-full flex-col gap-4"
             >
-              <label className="font-medium text-white/95">
+              <label htmlFor={emailId} className="font-medium text-white/95">
                 Sign up to our Newsletter
               </label>
               <div>
                 <div className="flex h-14 w-full items-center justify-between gap-2 rounded-xl bg-white p-1.5">
                   <input
+                    id={emailId}
                     type="email"
                     name="newsletter"
+                    autoComplete="email"
+                    aria-invalid={Boolean(error)}
+                    aria-describedby={error ? errorId : undefined}
                     placeholder="johndoe@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -210,7 +220,20 @@ const Footer = () => {
                     ) : null}
                   </button>
                 </div>
-                {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+                {error && (
+                  <p
+                    id={errorId}
+                    role="alert"
+                    className="text-red-500 text-sm mt-2"
+                  >
+                    {error}
+                  </p>
+                )}
+                {subscribed && (
+                  <p role="status" className="text-sm mt-2 text-green-300">
+                    Thanks — check your inbox to confirm.
+                  </p>
+                )}
               </div>
             </form>
 
