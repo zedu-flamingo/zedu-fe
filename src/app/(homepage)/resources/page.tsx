@@ -48,10 +48,34 @@ const ResourcesPage = () => {
             />
           </div>
         </div>
-        <div className="w-full max-w-6xl overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:flex md:justify-center md:overflow-visible">
+
+        {/* Mobile category selector */}
+        <div className="w-full max-w-6xl text-left md:hidden">
+          <label
+            htmlFor="resource-category"
+            className="mb-2 block text-sm font-medium text-neutral-700"
+          >
+            Browse category
+          </label>
+          <select
+            id="resource-category"
+            value={activeTab}
+            onChange={(e) => setActiveTab(e.target.value)}
+            className="w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 focus:outline-none focus:ring-2 focus:ring-primary-500"
+          >
+            {tabs.map((tab) => (
+              <option key={tab.id} value={tab.id}>
+                {tab.label}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Desktop category tabs */}
+        <div className="hidden w-full max-w-6xl md:flex md:justify-center">
           <div
             role="tablist"
-            className="inline-flex w-max items-center gap-2 rounded-full bg-purple-100 p-2 md:gap-3"
+            className="inline-flex items-center gap-2 rounded-full bg-purple-100 p-2 md:gap-3"
           >
             {tabs.map((tab) => (
               <button
