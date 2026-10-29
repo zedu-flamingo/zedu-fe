@@ -114,7 +114,13 @@ export const getOrgSlugForNotification = (payloadOrgId?: unknown): string => {
   if (storedSlug) return storedSlug;
 
   try {
-    const user = JSON.parse(localStorage.getItem("user") || "{}");
+    let user: any = {};
+    try {
+      user = JSON.parse(localStorage.getItem("user") || "{}");
+    } catch (error) {
+      console.error("Error parsing stored user data", error);
+      user = {};
+    }
     if (user?.current_organisation_slug) return user.current_organisation_slug;
 
     if (Array.isArray(user?.organisations) && payloadOrgId) {

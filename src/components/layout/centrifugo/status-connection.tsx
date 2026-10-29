@@ -81,7 +81,13 @@ export default function StatusConnection() {
           });
 
           try {
-            const storedUser = JSON.parse(localStorage.getItem("user") || "{}");
+            let storedUser: any = {};
+            try {
+              storedUser = JSON.parse(localStorage.getItem("user") || "{}");
+            } catch (error) {
+              console.error("Error parsing stored user data", error);
+              storedUser = {};
+            }
             if (storedUser?.user_id || storedUser?.id) {
               localStorage.setItem(
                 "user",
