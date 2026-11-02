@@ -7,9 +7,7 @@ import Link from "next/link";
 import { DataContext } from "~/store/GlobalState";
 import { ACTIONS } from "~/store/Actions";
 import {
-  BellIcon,
   DMsIcon,
-  GearIcon,
   HomeIcon,
   PeopleIcon,
   AgentsIcon,
@@ -17,6 +15,7 @@ import {
 } from "~/svgs";
 import ProfileDropdown from "~/app/(client)/[org]/_components/profile-dropdown";
 import UseHomeChannel from "~/app/(client)/[org]/home/channels/hooks/home-channels";
+import SidebarPopouts from "./popouts/sidebar-popouts";
 import {
   clearNotificationBadgeRegistry,
   isHomeRoute,
@@ -28,7 +27,6 @@ const SideBar: React.FC = () => {
   const { state, dispatch } = useContext(DataContext);
   const { user, orgSlug, notificationBadgeState } = state;
   const channelId = localStorage.getItem("channelId") || "";
-  const notificationBadgeCount = notificationBadgeState?.count ?? 0;
 
   useEffect(() => {
     if (!isHomeRoute(pathname) && !isNotificationsRoute(pathname)) return;
@@ -48,6 +46,7 @@ const SideBar: React.FC = () => {
   return (
     <>
       <UseHomeChannel />
+      <SidebarPopouts />
       <div
         className={`fixed w-[80px] min-w-[90px] h-screen bg-blue-500 top-[40px] z-30 lg:translate-x-0 transition-transform duration-300 ease-in-out
                ${state?.openSidebar === true ? "translate-x-0" : "-translate-x-full"}`}
@@ -57,6 +56,7 @@ const SideBar: React.FC = () => {
           onClick={searchValue}
         >
           <div
+            data-sidebar-rail
             className={`bg-blue-300 h-full rounded-[8px] px-[10px] py-4 flex flex-col items-center overflow-y-auto no-scrollbar`}
           >
             {!pathname.includes(`/${orgSlug}/welcome`) &&
@@ -96,6 +96,7 @@ const SideBar: React.FC = () => {
 
                       <Link
                         href={`/${orgSlug}/dm`}
+                        data-sidebar-preview="dms"
                         className={`flex flex-col group items-center justify-center p-1 ${
                           pathname === `/${orgSlug}`
                             ? "font-medium scale-[1.05]"
@@ -116,6 +117,7 @@ const SideBar: React.FC = () => {
 
                       <Link
                         href={`/${orgSlug}/people`}
+                        data-sidebar-preview="people"
                         className={`flex flex-col group items-center justify-center p-1 ${
                           pathname?.includes(`/${orgSlug}/people`)
                             ? "font-medium scale-[1.05]"
@@ -218,51 +220,6 @@ const SideBar: React.FC = () => {
                     </div>
 
                     <div className="relative flex flex-col items-center overflow-visible">
-                      <Link
-                        href={`/${orgSlug}/notifications`}
-                        className={`flex flex-col group z-50 cursor-pointer items-center justify-center w-full p-1 ${
-                          pathname === `/${orgSlug}/notifications`
-                            ? "font-medium scale-[1.05]"
-                            : "hover:font-medium "
-                        } `}
-                      >
-                        <span
-                          className={`relative overflow-visible p-2 rounded-[7px]  ${
-                            pathname?.includes(`/${orgSlug}/notifications`)
-                              ? "bg-blue-200"
-                              : "group-hover:bg-blue-200"
-                          }`}
-                        >
-                          <BellIcon />
-                          {notificationBadgeCount > 0 && (
-                            <span className="pointer-events-none absolute -right-1 -top-1 z-10 flex min-h-[18px] min-w-[18px] items-center justify-center rounded-full border-2 border-blue-300 bg-[#F04438] px-1 text-[10px] font-semibold leading-none text-white">
-                              {notificationBadgeCount > 99
-                                ? "99+"
-                                : notificationBadgeCount}
-                            </span>
-                          )}
-                        </span>
-                      </Link>
-
-                      <Link
-                        href={`/${orgSlug}/settings/personal/account`}
-                        className={`flex flex-col group z-50 cursor-pointer mb-2 items-center justify-center w-full ${
-                          pathname === `/${orgSlug}/settings`
-                            ? "font-medium scale-[1.05]"
-                            : "hover:font-medium "
-                        } `}
-                      >
-                        <span
-                          className={`p-2 rounded-[7px]  ${
-                            pathname?.includes(`/${orgSlug}/settings`)
-                              ? "bg-blue-200"
-                              : "group-hover:bg-blue-200"
-                          }`}
-                        >
-                          <GearIcon />
-                        </span>
-                      </Link>
-
                       <ProfileDropdown user={user} />
                     </div>
                   </div>

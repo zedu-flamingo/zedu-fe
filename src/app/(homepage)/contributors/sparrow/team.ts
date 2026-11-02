@@ -13,6 +13,7 @@ export type Team = {
   contributors: Contributor[];
 };
 
+// Contributor data used by the Sparrow team page.
 export const TEAM: Team = {
   name: "Zedu-Sparrow",
   contributors: [
@@ -26,9 +27,9 @@ export const TEAM: Team = {
     {
       fullName: "Denise Moemeke",
       zeduUsername: "denise_davida",
-      githubUsername: "deniseondata",
+      githubUsername: "databydenise",
       role: "Member",
-      field: "[Add your field of expertise]",
+      field: "Data Science / Engineering",
     },
     {
       fullName: "Medadi God'sglory Mitana",
@@ -53,7 +54,7 @@ export const TEAM: Team = {
     },
     {
       fullName: "Victor Adeshile",
-      zeduUsername: "Victor Adeshile",
+      zeduUsername: "victor_adeshile",
       githubUsername: "davik4life",
       role: "Member",
       field: "Full-Stack Software Engineer",
@@ -98,7 +99,49 @@ export const TEAM: Team = {
       zeduUsername: "Hafeey",
       githubUsername: "HAFEEZAH029",
       role: "Member",
-      field: "Frontend Development",
+      field: "Frontend Developer",
+    },
+    {
+      fullName: "Joshua Emmanuel",
+      zeduUsername: "joshua_emmanuel",
+      githubUsername: "joshua-emmanuel",
+      role: "Member",
+      field: "Frontend Developer",
+    },
+    {
+      fullName: "Uyanwanne Emmanuel Chukwudaru",
+      zeduUsername: "emmyanzo",
+      githubUsername: "emmyanzx",
+      role: "Member",
+      field: "Frontend Developer",
+    },
+    {
+      fullName: "Obidigwe Francis Praise Chukwunonso",
+      zeduUsername: "Francis-7-tech",
+      githubUsername: "francis-7-tech",
+      role: "Member",
+      field: "Fullstack Development",
+    },
+    {
+      fullName: "Eda Cynthia Itsekirimi",
+      zeduUsername: "Cynthy",
+      githubUsername: "Edacynthia",
+      role: "Member",
+      field: "Backend Developer",
+    },
+    {
+      fullName: "Ejike Odoh",
+      zeduUsername: "ejike",
+      githubUsername: "EjikeOdoh",
+      role: "Member",
+      field: "Frontend Developer",
+    },
+    {
+      fullName: "Paul Folorunsho",
+      zeduUsername: "Paul Folorunsho",
+      githubUsername: "folip01",
+      role: "Member",
+      field: "Backend Development",
     },
   ],
 };
